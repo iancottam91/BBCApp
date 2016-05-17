@@ -10,10 +10,6 @@ var testApp = angular.module('testApp', ['ngRoute','testControllers', 'testServi
 testApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/', {
-        templateUrl : 'assets/views/home.html',
-        controller  : 'HomeCtrl'
-      }).
       when('/listing', {
         templateUrl: 'assets/views/listing-index.html',
         controller: 'ListingCtrl'

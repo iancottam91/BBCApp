@@ -3,31 +3,45 @@
         <div class="header">
             <h1 class="brand-title">Use the A-Z navigation below to check the listings</h1>
             <nav class="listing-nav">
-                <a href="#/listing/{{value}}" ng-repeat="value in alphabet | letterBreak">{{value}}</a>
+                <ol>
+                    <li ng-repeat="value in alphabet | letterBreak">
+                        <a ng-class="{ 'selected': value==listingLetter }" href="#/listing/{{value}}">{{value}}</a>
+                    </li>
+                </ol>
             </nav>
             <div class="image-size">
-                <p>Select Image Size:</p>
+                <h2>Select Image Size:</h2>
                 <ul>
-                    <li ng-repeat="recipe in recipeOptions">
-                        <a href="" ng-click="changeImageSize(recipe)">{{recipe}}</a>
+                    <li ng-repeat="recipeVal in recipeOptions">
+                        <a href="" ng-class="{ 'selected': recipe==recipeVal }" ng-click="changeImageSize(recipeVal)">{{recipeVal}}</a>
                     </li>
+
+
                 </ul> 
             </div>
         </div>
     </div>
     <div class="content pure-u-1 pure-u-lg-3-4">
-        <h2 class="project-title">Showing results for {{listingLetter}}</h2>
+        <h2 class="project-title">Showing {{pageStart}} to {{pageEnd}} of {{totalItems}} results for '{{listingLetter}}'</h2>
+
+        <div class="pagination-container">
+            <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="20" ng-change="pageChanged()"></uib-pagination>
+        </div>
 
 
         <div class="projects">
-            <section class="project" ng-repeat="project in atozlisting">
+            <section ng-style="{'width': boxWidth + 'px' }" class="project" ng-repeat="project in atozlisting">
                 <header class="project-header">
-                    <h2 class="project-title"><a href="#/projects/{{project.title.toLowerCase().split(' ').join('-')}}">{{project.title}}</a></h2> 
+                    <h3 class="project-title"><a href="#/projects/{{project.title.toLowerCase().split(' ').join('-')}}">{{project.title}}</a></h3> 
                 </header>
                 <div>
                     <img src="{{project.images.standard | vanilla: recipe}}">
                 </div>
             </section>
+        </div>
+
+        <div class="pagination-container">
+            <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="20" ng-change="pageChanged()"></uib-pagination>
         </div>
 
     </div>

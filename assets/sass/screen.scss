@@ -8,9 +8,27 @@
 @import "variables";
 @import "typeog";
 
+	@mixin navButton(){
+		padding: 10px;
+		color: $white;
+		text-transform: uppercase;
+		float: left;
+		border: 1px solid $white;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		text-align: center;
+		&.selected{
+			background-color: $white;
+			color: $gold4;
+		}
+	}
+
+
 //pages
 @import "listings";
-// @import "skills";
+@import "pagination";
+
+
 
 *{
 	box-sizing: border-box;
@@ -44,27 +62,4 @@ html {
 			padding-left: 10px;
 		}
 	}
-}
-.listing-nav{
-	// text-align: justify;
-	overflow: hidden;
-	a{
-		padding: 10px;
-		color: white;
-		text-transform: uppercase;
-		float: left;
-		border: 1px solid white;
-		margin-right: 10px;
-		margin-bottom: 10px;
-		text-align: center;
-		width: 20px;
-		width: 35px;
-	}
-}
-.image-size{
-	color: white;
-}
-.projects .project{
-	float: left;
-	margin-right: 20px;
 }

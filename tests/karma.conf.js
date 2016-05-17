@@ -18,6 +18,7 @@ module.exports = function(config) {
       '../assets/js/angular/angular.min.js',
       'js/angular-mocks.1.4.6.js',
       '../assets/js/angular/angular-route.min.js',
+      '../assets/js/angular/ui-bootstrap-custom-tpls-1.3.2.min.js',
       '../assets/js/app.js',
       '../assets/js/services.js',
       '../assets/js/controllers.js',

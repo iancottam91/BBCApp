@@ -1,0 +1,26 @@
+.pagination-container{
+    overflow: hidden;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.pagination{
+	li{
+		a{
+			padding: 10px;
+			color: $gold4;
+			text-transform: uppercase;
+			text-decoration: none;
+			float: left;
+			border: 1px solid $gold4;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			text-align: center;
+		}
+		&.active{
+			a{
+				background-color: $gold4;
+				color: $white;
+			}
+		}
+	}
+}

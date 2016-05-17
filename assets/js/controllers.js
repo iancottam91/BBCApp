@@ -2,15 +2,8 @@
 // it handles interactions with the view and updates the model accordingly
 
 
-var testControllers = angular.module('testControllers', []);
+var testControllers = angular.module('testControllers', ['ui.bootstrap']);
 
-
-
-testControllers.controller('HomeCtrl', ['$scope', '$routeParams', '$http',
-  function($scope, $routeParams, $http) {
-
-  }])
-;
 
 
 testControllers.controller('ListingCtrl', ['$scope', '$routeParams', 'testService',
@@ -35,23 +28,79 @@ testControllers.controller('ListingDetailCtrl', ['$scope', '$rootScope', '$route
 
     $scope.recipeOptions = ['192x108', '406x228', '560x315'];
 
+
     if($rootScope.recipe === undefined){
-      $rootScope.recipe = "192x108";
+      $rootScope.recipe = "406x228";
+      $rootScope.boxWidth = "406";
     }
+
 
     $scope.changeImageSize = function(size){
       $rootScope.recipe = size;
+      $rootScope.boxWidth = $scope.getImageWidth(size);
+    }
+
+    $scope.getImageWidth = function(recipe){
+
+      return recipe.split('x')[0];
+
     }
 
     // get results and bind to scope
-    var bindDataToScope = function(apiData){
+    $scope.bindDataToScope = function(apiData){
       // console.log(apiData);
       $scope.atozlisting = apiData.elements;
     }
 
-    testService.getData($scope.listingLetter, 1, bindDataToScope);
+    testService.getData($scope.listingLetter, 1, $scope.bindDataToScope);
+
+    // pagination
+
+    $scope.bindTotalItemsToScope = function(itemsNumber){
+      $scope.totalItems = itemsNumber;
+      $scope.calculatePageStart($scope.totalItems);
+      $scope.calculatePageEnd($scope.totalItems);
+    }
+
+    // get the total number of items to bind to the scope and build pagination
+    testService.getTotalItems($scope.listingLetter, $scope.bindTotalItemsToScope);
+
+    // get total items from the api
+    $scope.currentPage = 1;
+
+
+    $scope.pageStart = 1;
+    $scope.pageEnd = 20;
+
+    $scope.calculatePageStart = function(totalItems){
+
+      if(totalItems === 0){
+        $scope.pageStart = 0;
+      } else {
+        $scope.pageStart = (20*($scope.currentPage - 1)) + 1;
+      }
+
+    }
+
+    $scope.calculatePageEnd = function(totalItems){
+
+      if( totalItems < ($scope.currentPage * 20) ){
+        $scope.pageEnd = totalItems;
+      } else {
+        $scope.pageEnd = (20*$scope.currentPage);
+      }
+
+    }
+
+
 
   
+    $scope.pageChanged = function() {
+
+      testService.getData($scope.listingLetter, $scope.currentPage, $scope.bindDataToScope);
+      $scope.calculatePageStart($scope.totalItems);
+      $scope.calculatePageEnd($scope.totalItems);
+    };
 
 
   }]);

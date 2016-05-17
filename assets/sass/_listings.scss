@@ -1,5 +1,22 @@
 #listings{
 
+	.project-title{
+		font-weight: bold;
+	}
+
+	.listing-nav{
+		// text-align: justify;
+		overflow: hidden;
+		a{
+			@include navButton();
+			width: 35px;
+		}
+	}
+	.projects .project{
+		display: inline-block;
+		margin-right: 20px;
+	}
+
 	.project:not(:last-child){
 		margin-bottom: 20px;
     	padding-bottom: 10px;
@@ -26,11 +43,8 @@
 	    }
 
 		background-color: $gold4;
-		h1{
+		h1, h2{
 			color: $white;
-		}
-		h2{
-			color: $gold3;
 		}
 	}
 	.content{
@@ -38,6 +52,20 @@
 		@media screen and (min-width: $width-lg){
 			margin-left: 25%;
 			padding: 30px;
+		}
+	}
+
+	.image-size{
+		// color: $white;
+		li{
+			a {
+				@include navButton();
+				color: $white;
+				&.selected{
+					background-color: $white;
+					color: $gold4;
+				}
+			}
 		}
 	}
 

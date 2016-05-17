@@ -4,8 +4,8 @@ testService.service('testService', ['$http',
  function ( $http ) {
 
  	this.getData = function readyFn(letter, page, callback){
- 		console.log('letter: ' + letter);
- 		console.log('page: ' + page);
+ 		// console.log('letter: ' + letter);
+ 		// console.log('page: ' + page);
 
  		if(page === undefined){
  			page = 1;
@@ -22,6 +22,18 @@ testService.service('testService', ['$http',
 		});
 
  	};
+
+ 	this.getTotalItems = function readyFn(letter, callback){
+ 		$http({
+ 			method: 'GET',
+ 			url: 'https://ibl.api.bbci.co.uk/ibl/v1/atoz/' + letter + '/programmes'
+ 		}).then(function successCallback(response) {
+		    callback( response.data.atoz_programmes.count );
+		}, function errorCallback(response) {
+		    
+
+		});
+ 	}
 
 
 	
