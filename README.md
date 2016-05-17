@@ -23,7 +23,7 @@ SERVER:
 ## Running test app:
 
 * To run the application locally, clone the project and run npm install. This will install all the dependencies.
-* Next open a terminal inside the project foldet and run node index.js
+* Next open a terminal inside the project folder and run node index.js (you may need to run as administrator)
 * This will run on port 80, so load up http://localhost - Be sure there is no other server running on port 80
 
 
