@@ -1,12 +1,10 @@
 var express = require('express');
-var favicon = require('serve-favicon');
 var app = express();
 
 
 
 app.use('/assets', express.static(__dirname + '/assets'));
 
-app.use(favicon(__dirname + '/assets/img/favicon.ico'));
 
 /* serves all the static files */
 
