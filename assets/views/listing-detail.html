@@ -32,10 +32,10 @@
         <div class="projects">
             <section ng-style="{'width': boxWidth + 'px' }" class="project" ng-repeat="project in atozlisting">
                 <header class="project-header">
-                    <h3 class="project-title"><a href="#/projects/{{project.title.toLowerCase().split(' ').join('-')}}">{{project.title}}</a></h3> 
+                    <h3 class="project-title">{{project.title}}</h3> 
                 </header>
                 <div>
-                    <img src="{{project.images.standard | vanilla: recipe}}">
+                    <img src="{{project.images.standard | recipeReplace: recipe}}">
                 </div>
             </section>
         </div>

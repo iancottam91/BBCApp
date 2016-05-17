@@ -1,7 +1,5 @@
 
-// the main APP loads the two dependencies:
-// - ngRoute: a standard angular module
-// - pluginControllers: our custom module
+// the main APP:  loads the two dependencies:
 
 var testApp = angular.module('testApp', ['ngRoute','testControllers', 'testService']);
 
@@ -24,7 +22,7 @@ testApp.config(['$routeProvider',
   }]);
 
 
-
+// split a string on each character
 testApp.filter("letterBreak", function () {
 
     return function ( value ) {
@@ -34,12 +32,10 @@ testApp.filter("letterBreak", function () {
 
 });
 
-testApp.filter("vanilla", function () {
+// replace the {recipe}
+testApp.filter("recipeReplace", function () {
 
     return function ( value, size ) {
-        // console.log(value);
-        // value.replace('{recipe}', size);
-        // console.log(size);
         return value.replace('{recipe}', size);
     }
 

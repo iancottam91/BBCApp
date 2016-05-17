@@ -1,5 +1,4 @@
-// the controller is used to link the the model to the view. 
-// it handles interactions with the view and updates the model accordingly
+// set up our controllers
 
 
 var testControllers = angular.module('testControllers', ['ui.bootstrap']);
@@ -9,6 +8,7 @@ var testControllers = angular.module('testControllers', ['ui.bootstrap']);
 testControllers.controller('ListingCtrl', ['$scope', '$routeParams', 'testService',
   function($scope, $routeParams, testService) {
 
+    // alphabet navigation
     $scope.alphabet = "abcdefghijklmnopqrstuvwxyz";
   
   }]);
@@ -23,23 +23,24 @@ testControllers.controller('ListingDetailCtrl', ['$scope', '$rootScope', '$route
     // bind the letter to the scope
     $scope.listingLetter = $routeParams.listingLetter;
 
-    // scope variables;
-    // $scope.atozlisting = [];
 
+    // hardcode the options
     $scope.recipeOptions = ['192x108', '406x228', '560x315'];
 
 
+    // set default recipe value and maintain the value throughout the different views
     if($rootScope.recipe === undefined){
       $rootScope.recipe = "406x228";
       $rootScope.boxWidth = "406";
     }
 
-
+    // allow user to change the image sizes
     $scope.changeImageSize = function(size){
       $rootScope.recipe = size;
       $rootScope.boxWidth = $scope.getImageWidth(size);
     }
 
+    // site the image width from the image size
     $scope.getImageWidth = function(recipe){
 
       return recipe.split('x')[0];
@@ -52,6 +53,7 @@ testControllers.controller('ListingDetailCtrl', ['$scope', '$rootScope', '$route
       $scope.atozlisting = apiData.elements;
     }
 
+    // get default data for a page
     testService.getData($scope.listingLetter, 1, $scope.bindDataToScope);
 
     // pagination
@@ -69,9 +71,11 @@ testControllers.controller('ListingDetailCtrl', ['$scope', '$rootScope', '$route
     $scope.currentPage = 1;
 
 
+    // default pagination params
     $scope.pageStart = 1;
     $scope.pageEnd = 20;
 
+    // functions to work out which number of listings are showing
     $scope.calculatePageStart = function(totalItems){
 
       if(totalItems === 0){

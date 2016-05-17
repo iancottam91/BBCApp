@@ -3,9 +3,9 @@ var testService = angular.module('testService', []);
 testService.service('testService', ['$http',
  function ( $http ) {
 
+ 	// get the a-z data
  	this.getData = function readyFn(letter, page, callback){
- 		// console.log('letter: ' + letter);
- 		// console.log('page: ' + page);
+
 
  		if(page === undefined){
  			page = 1;
@@ -23,6 +23,7 @@ testService.service('testService', ['$http',
 
  	};
 
+ 	// get the total number of listings
  	this.getTotalItems = function readyFn(letter, callback){
  		$http({
  			method: 'GET',

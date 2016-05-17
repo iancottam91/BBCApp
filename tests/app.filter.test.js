@@ -24,7 +24,7 @@ describe('Filters', function () {
     // Arrange.
     var patient = 'test {recipe} string';
 
-    var result = $filter('vanilla')(patient, '192x108');
+    var result = $filter('recipeReplace')(patient, '192x108');
     // Assert.
     expect(result).toEqual('test 192x108 string');
   });
