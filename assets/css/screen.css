@@ -1,0 +1,259 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 1, ../sass/_typeog.scss */
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  color: #333333;
+}
+
+/* line 6, ../sass/_typeog.scss */
+.pure-g [class*="pure-u"], .pure-g {
+  font-family: inherit !important;
+}
+
+/* line 9, ../sass/_typeog.scss */
+a {
+  text-decoration: none;
+}
+/* line 12, ../sass/_typeog.scss */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 17, ../sass/_typeog.scss */
+.content a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #333333;
+}
+
+/* line 30, ../sass/_typeog.scss */
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* line 34, ../sass/_typeog.scss */
+h2 {
+  font-size: 30px;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+
+/* line 39, ../sass/_typeog.scss */
+h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* line 43, ../sass/_typeog.scss */
+h4 {
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+/* line 47, ../sass/_typeog.scss */
+p {
+  margin-bottom: 15px;
+}
+
+/* line 50, ../sass/_typeog.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 53, ../sass/_typeog.scss */
+.btn {
+  font-size: 20px;
+  border: 1px solid #fff;
+  background-color: #BBAE99;
+  color: #fff;
+  padding: 6px 20px;
+  border-radius: 5px;
+}
+
+/* line 3, ../sass/_listings.scss */
+#listings .project:not(:last-child) {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(227, 213, 191, 0.7);
+}
+/* line 9, ../sass/_listings.scss */
+#listings .sidebar {
+  padding: 50px 15px 30px;
+  text-align: center;
+  background-color: #252525;
+}
+@media screen and (min-width: 1024px) {
+  /* line 9, ../sass/_listings.scss */
+  #listings .sidebar {
+    padding: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    padding-top: 50px;
+    text-align: left;
+  }
+  /* line 23, ../sass/_listings.scss */
+  #listings .sidebar .header {
+    margin: 50% 20px 20px;
+  }
+}
+/* line 29, ../sass/_listings.scss */
+#listings .sidebar h1 {
+  color: #fff;
+}
+/* line 32, ../sass/_listings.scss */
+#listings .sidebar h2 {
+  color: #BBAE99;
+}
+/* line 36, ../sass/_listings.scss */
+#listings .content {
+  padding: 15px;
+}
+@media screen and (min-width: 1024px) {
+  /* line 36, ../sass/_listings.scss */
+  #listings .content {
+    margin-left: 25%;
+    padding: 30px;
+  }
+}
+
+/* line 15, ../sass/screen.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 18, ../sass/screen.scss */
+html {
+  overflow-y: scroll;
+}
+
+/* line 22, ../sass/screen.scss */
+.pure-g {
+  margin-bottom: 20px;
+}
+
+/* line 26, ../sass/screen.scss */
+.top-nav {
+  background-color: #BBAE99;
+  padding: 15px;
+  position: relative;
+  z-index: 99;
+  overflow: hidden;
+}
+/* line 33, ../sass/screen.scss */
+.top-nav .menu-heading {
+  font-size: 18px;
+}
+/* line 36, ../sass/screen.scss */
+.top-nav a {
+  color: #333;
+}
+/* line 39, ../sass/screen.scss */
+.top-nav .menu-list {
+  font-size: 18px;
+  float: right;
+}
+/* line 42, ../sass/screen.scss */
+.top-nav .menu-list > li {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+/* line 48, ../sass/screen.scss */
+.listing-nav {
+  overflow: hidden;
+}
+/* line 51, ../sass/screen.scss */
+.listing-nav a {
+  padding: 10px;
+  color: white;
+  text-transform: uppercase;
+  float: left;
+  border: 1px solid white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 20px;
+  width: 35px;
+}
+
+/* line 64, ../sass/screen.scss */
+.image-size {
+  color: white;
+}
+
+/* line 67, ../sass/screen.scss */
+.projects .project {
+  float: left;
+  margin-right: 20px;
+}

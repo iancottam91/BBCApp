@@ -1,0 +1,44 @@
+#listings{
+
+	.project:not(:last-child){
+		margin-bottom: 20px;
+    	padding-bottom: 10px;
+    	border-bottom: 1px solid rgba(227,213,191,0.7);
+	}
+
+	.sidebar{
+
+		padding: 50px 15px 30px;
+    	text-align: center;
+
+
+		@media screen and (min-width: $width-lg){
+
+			padding: 0;
+			position: fixed;
+	    	top: 0;
+	    	bottom: 0;
+	    	padding-top: 50px;
+	    	text-align: left;
+	    	.header{
+	    		margin: 50% 20px 20px;
+	    	}
+	    }
+
+		background-color: $gold4;
+		h1{
+			color: $white;
+		}
+		h2{
+			color: $gold3;
+		}
+	}
+	.content{
+		padding: 15px;
+		@media screen and (min-width: $width-lg){
+			margin-left: 25%;
+			padding: 30px;
+		}
+	}
+
+}

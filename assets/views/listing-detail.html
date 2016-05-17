@@ -1,0 +1,34 @@
+<div id="listings" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-lg-1-4">
+        <div class="header">
+            <h1 class="brand-title">Use the A-Z navigation below to check the listings</h1>
+            <nav class="listing-nav">
+                <a href="#/listing/{{value}}" ng-repeat="value in alphabet | letterBreak">{{value}}</a>
+            </nav>
+            <div class="image-size">
+                <p>Select Image Size:</p>
+                <ul>
+                    <li ng-repeat="recipe in recipeOptions">
+                        <a href="" ng-click="changeImageSize(recipe)">{{recipe}}</a>
+                    </li>
+                </ul> 
+            </div>
+        </div>
+    </div>
+    <div class="content pure-u-1 pure-u-lg-3-4">
+        <h2 class="project-title">Showing results for {{listingLetter}}</h2>
+
+
+        <div class="projects">
+            <section class="project" ng-repeat="project in atozlisting">
+                <header class="project-header">
+                    <h2 class="project-title"><a href="#/projects/{{project.title.toLowerCase().split(' ').join('-')}}">{{project.title}}</a></h2> 
+                </header>
+                <div>
+                    <img src="{{project.images.standard | vanilla: recipe}}">
+                </div>
+            </section>
+        </div>
+
+    </div>
+</div>
